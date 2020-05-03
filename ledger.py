@@ -45,7 +45,7 @@ class Account:
         elif self.name == transaction.payee:
             self.balance += transaction.amount
         else:
-            raise AccountError("No transacton names match this account.")
+            raise AccountError("No transaction names match this account.")
 
         self.last_transaction_date = datetime.strptime(transaction.date, "%Y-%m-%d")
         self.balances[transaction.date] = self.balance

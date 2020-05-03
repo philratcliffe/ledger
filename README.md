@@ -3,7 +3,7 @@
 A program, written in Python3, to keep track of financial transactions between
 different parties — people and organisations. These parties are identified by
 a simple string such as "john" or "supermarket". Each record in the ledger is
-in the format: transaction date, payer, payee, ammount.
+in the format: transaction date, payer, payee, amount.
 
 The ledger of transactions looks like this:
 
