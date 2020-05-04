@@ -13,7 +13,10 @@ The ledger of transactions looks like this:
 2015-01-17,mary,insurance,100.00
 ```
 
-# Using from the REPL
+## Requirements
+Python 3 
+
+## Using from the REPL
 Below is an example of using the program from the REPL.
 ```pycon
 >>> from ledger import Ledger
@@ -33,15 +36,16 @@ eve
 -125
 ``` 
 
-# Example
+## Example
 A simple example program can be run from the command line,
 ```bash
 $ python ledger.py 
 ```
 
-# Tests
+## Tests
 To run the tests,
 ```bash
+$ cd tests
 $ python tests.py 
 ```
 

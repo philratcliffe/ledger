@@ -11,3 +11,9 @@ class AccountError(Error):
     """ An error raised by the Account class """
 
     pass
+
+
+class LedgerError(Error):
+    """ An error raised by the Ledger class """
+
+    pass

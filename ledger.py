@@ -3,7 +3,7 @@ import csv
 
 from datetime import datetime, timedelta
 
-from exceptions import AccountError
+from exceptions import AccountError, LedgerError
 
 
 class Transaction:
@@ -109,6 +109,7 @@ class Ledger:
             csv_reader = csv.reader(csv_file, delimiter=",")
             for row in csv_reader:
                 date = row[Ledger.DATE]
+                self.validate_date(date)
                 payer = row[Ledger.PAYER]
                 payee = row[Ledger.PAYEE]
                 amount = float(row[Ledger.AMOUNT])
@@ -119,9 +120,15 @@ class Ledger:
                 payer_account.add_transaction(transaction)
                 payee_account.add_transaction(transaction)
 
+    def validate_date(self, date):
+        try:
+            datetime.strptime(date, "%Y-%m-%d")
+        except ValueError:
+            raise LedgerError("Incorrect date format, should be YYYY-MM-DD")
+
 
 if __name__ == "__main__":
-    ledger = Ledger("transactions.csv")
+    ledger = Ledger("tests/test_data/transactions.csv")
 
     for account_name, account in ledger.accounts:
         print()
