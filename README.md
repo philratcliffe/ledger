@@ -48,5 +48,3 @@ To run the tests,
 $ cd tests
 $ python tests.py 
 ```
-
-
